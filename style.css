@@ -14,7 +14,7 @@ body {
 
 .navContainer {
     /* border: solid red; */
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     justify-content: space-between;
     align-items: center;
