@@ -1,0 +1,216 @@
+* {
+    /* border: .5px solid black; */
+}
+
+/* Media Query Syntax: Allows the rules of our css to apply to multiple screen sizes */
+
+
+/*General CSS*/
+
+body {
+    margin: 0; /* Reset the default margin */
+}
+
+
+.navContainer {
+    /* border: solid red; */
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.logoContainer {
+    /* border: solid seagreen; */
+    /* width: 10%; */
+
+
+}
+
+
+
+.logo {
+    width: 50px;
+}
+
+
+
+
+.optionsContainer a {  /* Target any links within the optionsContainer */
+    text-decoration: none;  /* Remove default underline */
+    color: black; 
+    margin-right: 50px; 
+    font-size: large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.optionsContainer a:first-child { /* Target the first link */
+    margin-left: 0; /* Remove margin from the left side */
+}
+
+
+.optionsContainer a:hover {
+    color: blue; 
+}
+
+
+
+.Home {
+    color:black;
+}
+
+.About {
+    color: black;
+
+}
+
+.Contact {
+    color: black;
+
+}
+
+
+
+
+
+
+.socialsContainer {
+
+}
+.socials {
+height: 20px;
+width: 20px;
+}
+
+
+.topContainer {
+/* border: solid chocolate; */
+width: 100% !important; 
+
+}
+
+.image1 {
+    width: 100%;
+    filter: brightness(40%);
+}
+
+
+
+
+.overlayText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Text color */
+    text-align: center;
+}
+
+.hamburger {
+    background-color: transparent; 
+    border: none;
+    padding: 15px;
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.hamburger-bar {
+    display: block;
+    
+    width: 30px; 
+    height: 3px;
+    background-color: black; 
+    margin: 5px auto;
+}
+
+.navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially off-screen */
+    width: 300px; 
+    height: 100%;
+    background-color: white;
+    transition: right 0.3s;
+}
+
+.navLinks.open { 
+    right: 5px; /* Slide to the right */
+    display: flex; 
+    flex-direction: column; /* Stack items vertically */
+    /* top: 70px; */
+    max-width: 250px; /* menu will adapt better to different screen sizes*/
+    /* height: 200px; */
+    max-height: 300px; /* Adjust the pixel value as needed */
+    overflow-y: auto; /* Add a scrollbar if content exceeds height */
+    background-color: black;
+    
+    
+    z-index: 800;
+
+
+}  
+.navLinks.open a { 
+    color: white;          /* Force the text color to white */
+    text-decoration: none; /* Remove underlines */
+    font-size: 20px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/* Overlay */
+.overlay {  
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Semi-transparent */
+    display: none; 
+}
+
+.overlay.open { display: block; } 
+
+
+.close-btn {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    background-color: transparent; 
+    border: none;
+    font-size: 20px; /* Adjust for larger X */
+    /* font-weight: bold; */
+    cursor: pointer; 
+    color: white;    
+}
+
+
+/*About Page*/
+
+.aboutHeader {
+    background-color: lightgray; 
+    padding: 20px;              
+    text-align: center;  
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;      
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/*Contact Page*/
+
+.contactHeader {
+    background-color: lightgray; 
+    padding: 20px;              
+    text-align: center;  
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+ }
+
+ .formsContainer {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;  /* Centers vertically (optional) */
+}
