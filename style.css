@@ -5,12 +5,15 @@
 /* Media Query Syntax: Allows the rules of our css to apply to multiple screen sizes */
 
 
+
+
 /*General CSS*/
 
 body {
-    margin: 0; /* Reset the default margin */
+    margin: 0;
+    /* Reset the default margin */
+    
 }
-
 
 .navContainer {
     /* border: solid red; */
@@ -25,40 +28,62 @@ body {
 .logoContainer {
     /* border: solid seagreen; */
     /* width: 10%; */
+    transition: transform 0.3s ease-in-out;
 
 
 }
 
+.logoContainer:hover {
+
+    transform: translateY(-5px) scale(1.05); 
+}
+
+.logo-initials {
+    position: relative;
+    /* margin-top: -10px; */
+    /* margin-left: 50px; */
+    left: 80%;
+    transform: translate(-50%, 0); 
+     font-size: 20px; /* Adjust the text size as needed */
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif
+
+}
 
 
 .logo {
-    width: 50px;
+    width: 60px;
+   
 }
 
 
 
 
-.optionsContainer a {  /* Target any links within the optionsContainer */
-    text-decoration: none;  /* Remove default underline */
-    color: black; 
-    margin-right: 50px; 
+.optionsContainer a {
+    /* Target any links within the optionsContainer */
+    text-decoration: none;
+    /* Remove default underline */
+    color: black;
+    margin-right: 50px;
     font-size: large;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.optionsContainer a:first-child { /* Target the first link */
-    margin-left: 0; /* Remove margin from the left side */
+.optionsContainer a:first-child {
+    /* Target the first link */
+    margin-left: 0;
+    /* Remove margin from the left side */
 }
 
 
 .optionsContainer a:hover {
-    color: blue; 
+    color: blue;
 }
 
 
 
 .Home {
-    color:black;
+    color: black;
 }
 
 .About {
@@ -76,123 +101,193 @@ body {
 
 
 
-.socialsContainer {
+.socialsContainer {}
 
-}
 .socials {
-height: 20px;
-width: 20px;
+    height: 20px;
+    width: 20px;
 }
 
 
-.topContainer {
-/* border: solid chocolate; */
-width: 100% !important; 
 
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
 }
 
 .image1 {
     width: 100%;
     filter: brightness(40%);
+    
+    
 }
 
 
 
+
+.image2 {
+    width: 100%;
+    
+}
+
+video1 {
+    width: 100%;
+    height: 100%;
+
+}
 
 .overlayText {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 300px;
     transform: translate(-50%, -50%);
-    color: white; /* Text color */
+    color: white;
+    /* Text color */
     text-align: center;
 }
 
+.overlayText h1 {
+    opacity: 0;          /* Initially hidden */
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.overlayText h2 {
+    opacity: 0;          
+    transform: translateX(-50px); /* Initially off-screen to the left */
+    animation: slideIn 1s ease-out forwards; 
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; } 
+} 
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); } 
+}
+
+
+
 .hamburger {
-    background-color: transparent; 
+    background-color: transparent;
     border: none;
     padding: 15px;
-    cursor: pointer; /* Indicate it's clickable */
+    cursor: pointer;
+    /* Indicate it's clickable */
 }
 
 .hamburger-bar {
     display: block;
-    
-    width: 30px; 
+
+    width: 30px;
     height: 3px;
-    background-color: black; 
+    background-color: black;
     margin: 5px auto;
 }
 
 .navLinks {
     position: fixed;
     top: 0;
-    right: -100%; /* Initially off-screen */
-    width: 300px; 
+    right: -100%;
+    /* Initially off-screen */
+    width: 300px;
     height: 100%;
     background-color: white;
-    transition: right 0.3s;
+    align-items: flex-end; 
+    justify-content: space-evenly
 }
 
-.navLinks.open { 
-    right: 5px; /* Slide to the right */
-    display: flex; 
-    flex-direction: column; /* Stack items vertically */
-    /* top: 70px; */
-    max-width: 250px; /* menu will adapt better to different screen sizes*/
-    /* height: 200px; */
-    max-height: 300px; /* Adjust the pixel value as needed */
-    overflow-y: auto; /* Add a scrollbar if content exceeds height */
+
+.navLinks a {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+
+    
+}
+
+
+.navLinks.open {
+    right: 0px;
+    /* Slide to the right */
+    display: flex;
+    flex-direction: column;
+    /* max-width: 250px; */
+    /* menu will adapt better to different screen sizes*/
+    max-height: 300px;
+    /* Adjust the pixel value as needed */
+    overflow-y: auto;
+    /* Add a scrollbar if content exceeds height */
     background-color: black;
-    
-    
+    padding-right: 20px;
+
     z-index: 800;
 
 
-}  
-.navLinks.open a { 
-    color: white;          /* Force the text color to white */
-    text-decoration: none; /* Remove underlines */
-    font-size: 20px; 
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-/* Overlay */
-.overlay {  
-    position: fixed;
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 100%;
-    background-color: rgba(0,0,0,0.5); /* Semi-transparent */
-    display: none; 
+.navLinks.open a {
+    color: white;
+    text-decoration: none;
+    /* Remove underlines */
 }
-
-.overlay.open { display: block; } 
-
 
 .close-btn {
-    position: absolute; 
-    top: 20px; 
-    right: 20px; 
-    background-color: transparent; 
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* background-color: lime; */
     border: none;
-    font-size: 20px; /* Adjust for larger X */
-    /* font-weight: bold; */
-    cursor: pointer; 
-    color: white;    
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
 }
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent */
+    display: none;
+}
+
+.overlay.open {
+    display: block;
+}
+
+
+.info-table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse; 
+}
+
+.info-table th,
+.info-table td {
+     border: 1px solid #ddd;
+     padding: 10px;
+     text-align: left;
+}
+
+.info-table th {
+    background-color: #f7f7f7; 
+}
+
 
 
 /*About Page*/
 
+
 .aboutHeader {
-    background-color: lightgray; 
-    padding: 20px;              
-    text-align: center;  
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;      
+    background-color: lightgray;
+    padding: 20px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 p {
@@ -200,17 +295,67 @@ p {
     line-height: 1.5;
 }
 
+.pContainer {
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 0 auto;  /* Centers the paragraph */
+}
+
+/*form*/
+
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px; 
+    background-color: #eeeeee;  
+    border: 1px solid #dddddd; 
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"], 
+  input[type="email"],
+  textarea {
+    width: 96%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+  }
+  
+  input[type="submit"] {
+      background-color: green; /* Darker blue button */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    
+  }
+
+  input[type="submit"]:hover {
+    background-color: green; 
+}
+
+
 /*Contact Page*/
 
 .contactHeader {
-    background-color: lightgray; 
-    padding: 20px;              
-    text-align: center;  
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
- }
-
- .formsContainer {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;  /* Centers vertically (optional) */
+     background-color: black;
+     color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+.formsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+

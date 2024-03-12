@@ -1,21 +1,19 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-         <!--navContainer-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contact</title> 
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--navContainer-->
     <div class="navContainer">
         <!--Logo-->
         <div class="logoContainer">
-  <img src="logo.jpg" 
-       alt=""
-       class="logo">
-  
+       <div class="logo-initials">HILLARY GILBERT</div> 
   
         </div>
   
@@ -33,6 +31,8 @@
         <a href="contact.html" 
         class="Contact">Contact</a>
   </div>
+  
+  
         <!--socialContainers-->
         <div class="socialContainers">
         <!--Socials-->
@@ -47,23 +47,40 @@
   class="socials">
   </div>
   
-        <!--searchContainer-->
-        <div class="searchContainer">
-  <img src="https://cdn-icons-png.flaticon.com/128/149/149852.png" 
-  alt=""
-  class="socials">
-        </div>
   
-      </div>
-        <!--Heading-->
-        <div class="aboutHeader">
-            <h1>Get in Touch</h1>
-
+        <!--searchContainer-->
+       <div class="searchContainer">
+  <!-- <img src="https://cdn-icons-png.flaticon.com/128/149/149852.png" alt=""class="socials"> -->
+  
         </div>
-        
-        <!--Forms-->
-<div class="formsContainer">
-        <form action="submit_form.php"> <label for="name">Name:</label><br>
+             <!--hamburgerContainer-->
+        <button class="hamburger">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+      </button>
+        <!--overlay-->
+      <div class="overlay"></div>
+        <!--navLinks-->
+      <div class="navLinks">
+                <!--closeBtn-->
+          <div class="close-btn">X</div> 
+          <a href="/" class="homeLink">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+      </div>
+  </nav>
+    </div>
+
+    <div class="contactHeader"> <h1>Get in Touch</h1>
+    </div>
+
+
+
+    
+    <div class="formsContainer">
+        <form action="submit_form.php"> 
+            <label for="name">Name:</label><br>
             <input type="text" id="name" name="name"><br>
           
             <label for="email">Email:</label><br>
@@ -73,9 +90,32 @@
             <textarea id="message" name="message"></textarea><br><br>
           
             <input type="submit" value="Send">
-          </form>
-        </div>
-          
-        <script src="app.js" async defer></script>
-    </body>
+        </form>
+    </div>
+
+
+
+<!--Table-->
+<table class="info-table">
+    <caption>Important Information</caption> 
+    <thead>
+        <tr>
+            <th>Topic</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Website Purpose</td>
+            <td>To showcase my web development skills</td>
+        </tr>
+        <tr>
+            <td>Target Audience</td>
+            <td>Potential employers</td>
+        </tr>
+    </tbody>
+</table>
+
+    <script src="app.js" async defer></script>
+</body>
 </html>
